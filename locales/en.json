@@ -1,0 +1,16 @@
+{
+  "title": "Hosts Editor",
+  "add": "Add",
+  "edit": "Edit",
+  "delete": "Delete",
+  "save": "Save",
+  "add_ip": "Enter IP:",
+  "add_domain": "Enter domain:",
+  "edit_ip": "Edit IP:",
+  "edit_domain": "Edit domain:",
+  "select_warning": "Select an entry to edit/delete",
+  "error_read": "Administrator privileges are required to read hosts file.",
+  "error_write": "Administrator privileges are required to save hosts file.",
+  "file_not_found": "Hosts file not found",
+  "success_save": "Hosts file saved successfully"
+}

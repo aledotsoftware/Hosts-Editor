@@ -1,0 +1,17 @@
+
+{
+  "title": "Editor de Hosts",
+  "add": "Agregar",
+  "edit": "Editar",
+  "delete": "Eliminar",
+  "save": "Guardar",
+  "add_ip": "Ingrese la IP:",
+  "add_domain": "Ingrese el dominio:",
+  "edit_ip": "Editar IP:",
+  "edit_domain": "Editar dominio:",
+  "select_warning": "Seleccione una entrada para editar/eliminar",
+  "error_read": "Se requieren permisos de administrador para leer el archivo hosts.",
+  "error_write": "Se requieren permisos de administrador para guardar el archivo hosts.",
+  "file_not_found": "No se encontró el archivo hosts",
+  "success_save": "Archivo hosts guardado correctamente"
+}
