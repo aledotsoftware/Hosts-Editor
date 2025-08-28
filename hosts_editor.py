@@ -7,6 +7,7 @@ import subprocess
 import sys
 import ipaddress
 import re
+import ctypes
 from datetime import datetime
 
 HOSTS_FILE = r"C:\Windows\System32\drivers\etc\hosts"
@@ -31,6 +32,10 @@ def is_valid_domain(domain):
     # Regex básico: letras, números, guiones, puntos, y TLD de al menos 2 caracteres
     regex = r"^(?!-)[A-Za-z0-9-]{1,63}(?<!-)(\.[A-Za-z]{2,})+$"
     return re.match(regex, domain) is not None
+
+
+def is_admin():
+    return ctypes.windll.shell32.IsUserAnAdmin()
 
 
 class HostsEditor:
@@ -172,6 +177,15 @@ class HostsEditor:
 
 
 if __name__ == "__main__":
+    if not is_admin():
+        messagebox.showwarning(T["warning"], T["warning_admin"])
+        try:
+            # Comando para relanzar con permisos
+            subprocess.Popen(['powershell', '-Command', f'Start-Process -FilePath "{os.path.abspath(sys.argv[0])}" -Verb RunAs'])
+        except Exception as e:
+            messagebox.showerror(T["error"], f"{T['error_admin_launch']}\n{e}")
+        sys.exit()
+    # Si llega aquí, el programa tiene permisos de administrador y puede continuar
     root = tk.Tk()
     app = HostsEditor(root)
     root.mainloop()
