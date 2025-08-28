@@ -19,7 +19,7 @@
 
 ### Instalación
 
-1.  Descarga el ejecutable `hosts_editor` desde la [página de lanzamientos](https://github.com/). 
+1.  Descarga el ejecutable `hosts_editor` desde la [página de lanzamientos](https://github.com/aledotsoftware/Hosts-Editor/releases). 
 2.  Haz clic derecho sobre el archivo y selecciona **"Ejecutar como administrador"** para tener los permisos necesarios para modificar el archivo `hosts`.
 
 ### Uso Básico
@@ -41,8 +41,8 @@
 
 1.  Clona el repositorio:
     ```bash
-    git clone https://github.com/tu-usuario/tu-proyecto.git
-    cd tu-proyecto
+    git clone https://github.com/aledotsoftware/Hosts-Editor.git
+    cd Hosts-Editor
     ```
 2.  Instala PyInstaller:
     ```bash
