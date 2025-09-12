@@ -8,6 +8,7 @@ import sys
 import ipaddress
 import re
 import ctypes
+import webbrowser
 from datetime import datetime
 
 HOSTS_FILE = r"C:\Windows\System32\drivers\etc\hosts"
@@ -54,6 +55,11 @@ class HostsEditor:
 
         self.delete_button = tk.Button(master, text=T["delete"], command=self.delete_entry)
         self.delete_button.pack(side=tk.LEFT, padx=5, pady=5)
+
+        self.open_button = tk.Button(
+            master, text=T.get("open_in_browser", "Open"), command=self.open_in_browser
+        )
+        self.open_button.pack(side=tk.LEFT, padx=5, pady=5)
 
         self.save_button = tk.Button(master, text=T["save"], command=self.save_hosts)
         self.save_button.pack(side=tk.RIGHT, padx=5, pady=5)
@@ -149,6 +155,19 @@ class HostsEditor:
             messagebox.showwarning(T["delete"], T["select_warning"])
             return
         self.listbox.delete(selected[0])
+
+    def open_in_browser(self):
+        selected = self.listbox.curselection()
+        if not selected:
+            messagebox.showwarning(T.get("open_in_browser", "Open"), T["select_warning"])
+            return
+        line = self.listbox.get(selected[0])
+        try:
+            # Tomar el segundo elemento (el dominio)
+            domain = line.split()[1]
+            webbrowser.open(f"http://{domain}")
+        except (IndexError, ValueError):
+            messagebox.showerror("Error", T.get("invalid_domain", "❌ Invalid domain"))
 
     def save_hosts(self):
         # Crear backup con fecha y hora
