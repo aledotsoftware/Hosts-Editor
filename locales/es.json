@@ -1,10 +1,10 @@
-
 {
   "title": "Editor de Hosts",
   "add": "Agregar",
   "edit": "Editar",
   "delete": "Eliminar",
   "save": "Guardar",
+  "open_in_browser": "Abrir en Navegador",
   "add_ip": "Dirección IP",
   "add_domain": "Dominio",
   "edit_ip": "Editar IP:",
