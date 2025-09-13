@@ -54,7 +54,8 @@
 Para generar el archivo `.exe` en la carpeta `dist/`, ejecuta el siguiente comando desde la raíz del proyecto:
 
 ```bash
-pyinstaller --onefile --windowed --add-data "locales;locales" hosts_editor.py
+python -m PyInstaller --onefile --windowed --add-data "locales;locales" hosts_editor.py
+
 ```
 
 El `exe` generado no requiere que el usuario final tenga Python instalado.
